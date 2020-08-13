@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - 12
+before_script:
+  - yarn
+script: node_modules/eslint/bin/eslint.js -c .eslintrc src
