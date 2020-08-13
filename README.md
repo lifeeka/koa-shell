@@ -2,7 +2,7 @@
 
 
 ## Koa Skeleton
-Structured Sample skeleton application for Koa with flow types and eslint.
+Structured Sample skeleton application for Koa with flow types and eslint for API developments.
 
 ### Installation
 
@@ -13,6 +13,12 @@ git clone https://github.com/lifeeka/koa-skeleton.git
 
 ### Start
 `yarn start` or `npm run start`
+
+### Stack
+- Koa 2.x
+- MongoDB with mongoose
+- Flow Types
+- ESLint with airbnb style guide 
 
 ### License
 
