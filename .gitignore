@@ -1,0 +1,8 @@
+#Local ignores
+/.born
+.idea/
+.env
+
+#Libraries
+/node_modules
+yarn-error.log
