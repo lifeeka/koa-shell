@@ -1,5 +1,5 @@
 {
-  "name": "koa-skelton",
+  "name": "koa-shell",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,8 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-watch": "^7.0.0",
+    "chalk-pipe": "^4.0.0",
+    "colors": "^1.4.0",
     "eslint": "7.2",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-google": "^0.14.0",
@@ -38,7 +40,9 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "flow-bin": "^0.127.0",
+    "inquirer": "^7.3.3",
     "prettier": "^2.0.5",
-    "typedi": "^0.8.0"
+    "typedi": "^0.8.0",
+    "write": "^2.0.0"
   }
 }

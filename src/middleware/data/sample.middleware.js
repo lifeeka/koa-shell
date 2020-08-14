@@ -1,4 +1,4 @@
-import type { SampleType } from 'types/sample.type';
+import type { SampleType } from 'type/sample.type';
 
 export default () => (sample: any) => {
   const data: SampleType = {

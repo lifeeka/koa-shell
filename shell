@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+
+const chalkPipe = require('chalk-pipe');
+const write = require('write');
+
+const CamelCase = (text) => text.replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
+
+const sampleError = (name) => `export default class ${CamelCase(name)}Error extends Error {
+  constructor(message: string, status: number = 500) {
+    super(message);
+
+    this.name = this.constructor.name;
+    this.status = status;
+  }
+}`;
+const sampleService = (name) => `export default class ${CamelCase(name)}Service {
+  // your contents
+}
+`;
+const sampleModel = (name) => `import mongoose from 'mongoose';
+
+const { Schema } = mongoose;
+
+const ${CamelCase(name)}Model = new Schema(
+  {
+    ${name}_text: {
+      type: String,
+      required: [true, 'Name is required'],
+    },
+    ${name}_number: {
+      type: Number,
+      required: [true, 'Name is required'],
+    },
+  },
+);
+
+export default mongoose.model('${CamelCase(name)}Model', ${CamelCase(name)}Model);
+`;
+const sampleRepository = (name) => `export default class ${CamelCase(name)}Repository {
+}`;
+const sampleType = (name) => `export type ${CamelCase(name)}Type = {
+  sample_text: string,
+  sample_number: string
+};
+`;
+
+console.log(chalkPipe('blue.bold.underline')('Welcome to Koa Shell!\n'));
+
+const options = process.argv
+  .slice(2)
+  .map((arg) => arg.split(':'));
+
+if (options?.[0]?.[0] === 'make') {
+  switch (options[0][1]) {
+    case 'error':
+      write.sync(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js`, sampleError(options[1][0]), { newline: true });
+      console.log(chalkPipe('green.bold')(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js has been created!`));
+      break;
+    case 'service':
+      write.sync(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js`, sampleService(options[1][0]), { newline: true });
+      console.log(chalkPipe('green.bold')(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js has been created!`));
+      break;
+    case 'model':
+      write.sync(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js`, sampleModel(options[1][0]), { newline: true });
+      console.log(chalkPipe('green.bold')(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js has been created!`));
+      break;
+    case 'repository':
+      write.sync(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js`, sampleRepository(options[1][0]), { newline: true });
+      console.log(chalkPipe('green.bold')(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js has been created!`));
+      break;
+    case 'type':
+      write.sync(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js`, sampleType(options[1][0]), { newline: true });
+      console.log(chalkPipe('green.bold')(`src/${options[0][1]}/${options[1][0]}.${options[0][1]}.js has been created!`));
+      break;
+    default:
+      console.log(chalkPipe('red.bold')('Invalid Task!'));
+      break;
+  }
+} else {
+  console.log(chalkPipe('red.bold')('Invalid Action!'));
+}

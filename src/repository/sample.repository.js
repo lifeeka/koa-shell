@@ -1,5 +1,5 @@
-import Sample from 'models/sample.model';
-import type { SampleType } from 'types/sample.type';
+import Sample from 'model/sample.model';
+import type { SampleType } from 'type/sample.type';
 
 export default class SampleRepository {
   /**

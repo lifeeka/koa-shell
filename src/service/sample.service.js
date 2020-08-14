@@ -1,6 +1,6 @@
 import SampleRepository from 'repository/sample.repository';
 import SampleMiddleware from 'middleware/data/sample.middleware';
-import type { SampleType } from 'types/sample.type';
+import type { SampleType } from 'type/sample.type';
 
 export default class SampleService {
   repository: SampleRepository;
