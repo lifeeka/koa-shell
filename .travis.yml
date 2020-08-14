@@ -5,4 +5,4 @@ before_script:
   - yarn
 script: node_modules/eslint/bin/eslint.js -c .eslintrc src
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t 1ca22dff-a31b-4a49-8477-2b3dd749d155
