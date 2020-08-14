@@ -4,3 +4,5 @@ node_js:
 before_script:
   - yarn
 script: node_modules/eslint/bin/eslint.js -c .eslintrc src
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

@@ -11,9 +11,9 @@ const app = new Koa();
 dotenv.config();
 global.config = require('./config/app').default;
 
-// database
+// Database
 mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database at ${global.config.db}`);
+  throw new Error(`Unable to connect to database at ${global.config.db}`);
 });
 mongoose.connect(global.config.db, {
   useNewUrlParser: true,
@@ -22,17 +22,17 @@ mongoose.connect(global.config.db, {
 }).then(() => console.log('Mongodb connected!'));
 mongoose.set('useCreateIndex', true);
 
-// error handling
+// Error handling
 app.use(errorHandler());
 
-// uses
+// Middlewares
 app.use(json());
 app.use(bodyParser());
 
-// routes
+// Routes
 app.use(apiRouter.routes());
 app.use(apiRouter.allowedMethods());
 
-app.listen(4234);
+app.listen(process.env.PORT);
 // eslint-disable-next-line no-console
-console.log('Koa listening on port 4234');
+console.log(`Koa listening on port ${process.env.PORT}`);

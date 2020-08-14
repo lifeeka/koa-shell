@@ -1,3 +1,3 @@
 export default {
-  db: 'mongodb://mongodb:27017/sample',
+  db: process.env.CONNECTION_STRING,
 };
