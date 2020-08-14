@@ -1,6 +1,6 @@
 import shouldAuth from 'middleware/router/auth.middleware';
 import response from 'response/default.response';
-import SampleService from '../../services/sample.service';
+import SampleService from 'services/sample.service';
 
 export default (router: any) => {
   router.use(['/on-auth'], shouldAuth());
