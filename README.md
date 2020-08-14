@@ -1,14 +1,14 @@
-<p><img src="https://raw.githubusercontent.com/lifeeka/koa-skeleton/master/logo.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/lifeeka/koa-shell/master/logo.png" alt=""></p>
 
 
-## Koa Skeleton
-Structured Sample skeleton application for Koa with flow types and eslint for API developments.
+## Koa shell
+Structured Sample shell application for Koa with flow types and eslint for API developments.
 
 ### Installation
 
 Clone the project using git clone
 ```
-git clone https://github.com/lifeeka/koa-skeleton.git
+git clone https://github.com/lifeeka/koa-shell.git
 ```
 
 ### Start
