@@ -2,7 +2,7 @@
 
 
 ## Koa shell
-Structured Sample shell application for Koa with flow types and eslint for API developments.
+Structured sample skeleton application for microservices and api development with Koa 2.X
 
 ### Installation
 
