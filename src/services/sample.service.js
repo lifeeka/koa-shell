@@ -9,7 +9,12 @@ export default class SampleService {
     this.repository = new SampleRepository();
   }
 
-  async save(param: any): SampleType {
+  /**
+   * Save Samples
+   * @param param
+   * @returns {Promise<SampleType>}
+   */
+  async save(param: any): Promise<SampleType> {
     return this.repository.save(param).then(SampleMiddleware());
   }
 }

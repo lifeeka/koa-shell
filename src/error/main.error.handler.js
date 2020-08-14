@@ -17,7 +17,7 @@ export default () => async (ctx: any, next: any) => {
     if (process.env.NODE_ENV === 'development') {
       message = err.message;
       if (err.stack) {
-        errorArray.trace = err.stack.split('\n');
+        errorArray.trace = err.stack.split('\n').map((errorLine: string) => errorLine.trim());
       }
       errorArray.environment = process.env.NODE_ENV;
     } else {

@@ -4,6 +4,7 @@ import SampleService from '../../services/sample.service';
 
 export default (router: any) => {
   router.use(['/on-auth'], shouldAuth());
+
   router.get('hello-world', '/', async (ctx: any) => {
     ctx.body = response.response({ a: 'Hello Koa!', b: 'Created by Lifeeka' }, 'Success message!');
     ctx.status = 200;
