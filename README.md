@@ -14,6 +14,23 @@ git clone https://github.com/lifeeka/koa-shell.git
 ### Start
 `yarn start` or `npm run start`
 
+### Usage
+Create Service <br/>
+`node shell make:service test`<br/>
+
+Create Model<br/>
+`node shell make:model test`<br/>
+
+Create Repository<br/>
+`node shell make:repository test`<br/>
+
+Create Type<br/>
+`node shell make:type test` <br/>
+
+Create Error<br/>
+`node shell make:error test`<br/>
+
+
 ### Stack
 - Koa 2.x
 - MongoDB with mongoose
