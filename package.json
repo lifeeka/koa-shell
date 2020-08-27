@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec babel-node app.js",
+    "start": "nodemon --exec babel-node server.js",
     "migrate": "node -r esm src/database/migrate.js",
-    "babel": "nodemon --exec babel-node app.js"
+    "babel": "nodemon --exec babel-node server.js",
+    "coverage": "nyc report --reporter=json",
+    "lint": "eslint *.js test/*.js --fix",
+    "test": "env PORT=8080 npx jest --detectOpenHandles"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
@@ -41,8 +44,16 @@
     "eslint-plugin-react": "^7.20.0",
     "flow-bin": "^0.127.0",
     "inquirer": "^7.3.3",
+    "jest": "^26.4.2",
+    "mocha": "^8.1.2",
     "prettier": "^2.0.5",
+    "supertest": "^4.0.2",
     "typedi": "^0.8.0",
     "write": "^2.0.0"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   }
 }

@@ -32,7 +32,4 @@ app.use(bodyParser());
 // Routes
 app.use(apiRouter.routes());
 app.use(apiRouter.allowedMethods());
-
-app.listen(process.env.PORT);
-// eslint-disable-next-line no-console
-console.log(`Koa listening on port ${process.env.PORT}`);
+module.exports = app;
