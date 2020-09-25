@@ -1,11 +1,16 @@
 import Router from '@koa/router';
 import response from 'response/default.response';
+import formatter from 'middleware/router/formatter.middleware';
 
-import sample from './sample.router';
+import post from './post.router';
+import comment from './comment.router';
 
-const router = new Router();
+let router = new Router();
 
-const exportRouter = sample(router);
+router.use(formatter(true));
+
+router = comment(router);
+const exportRouter = post(router);
 
 exportRouter.all('*', (ctx: any) => {
   ctx.body = response.response({ url: ctx.request.url }, 'Page not found');
