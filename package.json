@@ -8,7 +8,8 @@
     "babel": "nodemon --exec babel-node server.js",
     "coverage": "nyc report --reporter=json",
     "lint": "eslint *.js test/*.js --fix",
-    "test": "env PORT=8080 npx jest --detectOpenHandles"
+    "test": "env PORT=8080 npx jest --detectOpenHandles",
+    "build": "export $(cat .env | xargs) && sh build.sh"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
@@ -30,6 +31,7 @@
     "@babel/runtime": "^7.10.2",
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-watch": "^7.0.0",
     "chalk-pipe": "^4.0.0",
     "colors": "^1.4.0",
@@ -45,15 +47,11 @@
     "flow-bin": "^0.127.0",
     "inquirer": "^7.3.3",
     "jest": "^26.4.2",
+    "migrate-mongo": "^8.1.4",
     "mocha": "^8.1.2",
     "prettier": "^2.0.5",
     "supertest": "^4.0.2",
     "typedi": "^0.8.0",
     "write": "^2.0.0"
-  },
-  "standard": {
-    "env": [
-      "mocha"
-    ]
   }
 }

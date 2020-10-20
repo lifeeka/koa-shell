@@ -2,6 +2,7 @@
 
 const chalkPipe = require('chalk-pipe');
 const write = require('write');
+const { spawn } = require('child_process');
 
 const CamelCase = (text) => text.replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
 
@@ -44,6 +45,7 @@ const sampleType = (name) => `export type ${CamelCase(name)}Type = {
 };
 `;
 
+// eslint-disable-next-line no-console
 console.log(chalkPipe('blue.bold.underline')('Welcome to Koa Shell!\n'));
 
 const options = process.argv
@@ -76,6 +78,17 @@ if (options?.[0]?.[0] === 'make') {
       console.log(chalkPipe('red.bold')('Invalid Task!'));
       break;
   }
+} else if (options?.[0]?.[0] === 'migrate') {
+  const ls = spawn('./node_modules/.bin/migrate-mongo', options[1]);
+  ls.stdout.on('data', (data) => {
+    // eslint-disable-next-line no-console
+    console.log(data.toString());
+  }).on('error', (error) => {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  });
+
+// ./node_modules/.bin/migrate-mongo
 } else {
   console.log(chalkPipe('red.bold')('Invalid Action!'));
 }
