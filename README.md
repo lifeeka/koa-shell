@@ -31,6 +31,19 @@ Create Error<br/>
 `node shell make:error test`<br/>
 
 
+Database migrate help<br/>
+  `node shell migrate`<br/>
+  `node shell migrate init`         initialize a new migration project<br/>
+  `node shell migrate create [options] [description]`  create a new database migration with the
+                                  provided description<br/>
+  `node shell migrate up [options]`                    run all pending database migrations<br/>
+  `node shell migrate down [options]`                  undo the last applied database migration<br/>
+  `node shell migrate status [options]`                print the changelog of the database<br/>
+  `node shell migrate help [command]`                  display help for command<br/>
+
+
+
+
 ### Stack
 - Koa 2.x
 - MongoDB with mongoose
