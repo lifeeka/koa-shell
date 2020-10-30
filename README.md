@@ -32,7 +32,6 @@ Create Error<br/>
 
 
 Database migrate help<br/>
-  `node shell migrate`<br/>
   `node shell migrate init`         initialize a new migration project<br/>
   `node shell migrate create [options] [description]`  create a new database migration with the
                                   provided description<br/>
