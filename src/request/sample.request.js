@@ -1,7 +1,7 @@
 import ow from 'ow';
+import SampleError from 'error/sample.error';
 import Base from './base';
 import type { RequestInterface } from './request.interface';
-import SampleError from '../error/sample.error';
 
 class SampleRequest extends Base implements RequestInterface {
   /**
