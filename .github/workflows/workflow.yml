@@ -41,7 +41,7 @@ jobs:
         env:
           CONNECTION_STRING: mongodb://localhost:27017/sample
           PORT: 4234
-      - run: yarn test
+      - run: yarn test --coverage --updateSnapshot
         env:
           CONNECTION_STRING: mongodb://localhost:27017/sample
           PORT: 4234
