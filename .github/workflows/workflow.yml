@@ -37,10 +37,6 @@ jobs:
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: yarn
-      - run: nohup node_modules/.bin/babel-node server.js &
-        env:
-          CONNECTION_STRING: mongodb://localhost:27017/sample
-          PORT: 4234
       - run: yarn test --coverage --updateSnapshot
         env:
           CONNECTION_STRING: mongodb://localhost:27017/sample
