@@ -42,3 +42,6 @@ jobs:
           CONNECTION_STRING: mongodb://localhost:27017/sample
           PORT: 4234
       - run: yarn test
+        env:
+          CONNECTION_STRING: mongodb://localhost:27017/sample
+          PORT: 4234
