@@ -8,16 +8,17 @@
     "babel": "nodemon --exec babel-node server.js",
     "coverage": "nyc report --reporter=json",
     "lint": "eslint *.js test/*.js --fix",
-    "test": "env PORT=8080 npx jest --detectOpenHandles",
+    "test": "env PORT=8080 npx jest --forceExit --detectOpenHandles --maxWorkers=10",
     "build": "export $(cat .env | xargs) && sh build.sh"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
-    "koa-bodyparser": "^4.3.0",
+    "koa-body": "^4.2.0",
     "koa-json": "^2.0.2",
-    "mongoose": "^5.9.12"
+    "mongoose": "^5.9.12",
+    "ow": "^0.19.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",

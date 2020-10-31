@@ -1,0 +1,31 @@
+name: Workflow
+on: push
+
+jobs:
+  eslint:
+    name: Run Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run eslint
+        run: node_modules/eslint/bin/eslint.js -c .eslintrc src
+
+  Test:
+    name: Run Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run eslint
+        run: yarn test
