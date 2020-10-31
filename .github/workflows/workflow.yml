@@ -37,7 +37,7 @@ jobs:
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: yarn
-      - run: yarn start
+      - run: node_modules/.bin/babel-node server.js
       - run: yarn test
         env:
           CONNECTION_STRING: mongodb://mongodb:27017/sample
