@@ -2,9 +2,12 @@
   "name": "koa-shell",
   "version": "0.0.0",
   "private": true,
+  "presets": [
+    "@babel/preset-env"
+  ],
   "scripts": {
     "start": "nodemon --exec babel-node server.js",
-    "migrate": "node -r esm src/database/migrate.js",
+    "migrate": "babel-node src/database/migrate.js",
     "babel": "nodemon --exec babel-node server.js",
     "coverage": "nyc report --reporter=json",
     "lint": "eslint *.js test/*.js --fix",
@@ -14,6 +17,7 @@
   "dependencies": {
     "@koa/router": "^8.0.8",
     "dotenv": "^8.2.0",
+    "faker": "^5.1.0",
     "koa": "^2.11.0",
     "koa-body": "^4.2.0",
     "koa-json": "^2.0.2",
@@ -34,8 +38,9 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-watch": "^7.0.0",
-    "chalk-pipe": "^4.0.0",
+    "chalk": "^4.1.0",
     "colors": "^1.4.0",
+    "commander": "^6.2.0",
     "eslint": "7.2",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-google": "^0.14.0",
@@ -45,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
+    "figlet": "^1.5.0",
     "flow-bin": "^0.127.0",
     "inquirer": "^7.3.3",
     "jest": "^26.4.2",
