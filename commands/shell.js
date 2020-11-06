@@ -109,7 +109,7 @@ program
       try {
         const Seeder = seeder(seederName);
         const seederItem: SeederInterface = new Seeder();
-        await seederItem.seed(100);
+        await seederItem.seed();
         console.log(chalk.green.bold('Success!'));
       } catch (error) {
         console.log(chalk.red.bold('Invalid Seed!', error));

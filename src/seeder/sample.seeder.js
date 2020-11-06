@@ -11,8 +11,8 @@ export default class SampleSeeder extends Base implements SeederInterface {
     this.repository = new SampleRepository();
   }
 
-  async seed(instance: number): boolean {
-    const seeds = await Array(instance).fill().map(async () => {
+  async seed(): boolean {
+    const seeds = await Array(1).fill().map(async () => {
       const data = {
         sample_text: faker.name.findName(),
         sample_number: faker.random.number(),
