@@ -107,12 +107,12 @@ program
     const seederName = name;
     if (seederName) {
       try {
-        console.time('seed_time');
+        console.time('time');
         const Seeder = seeder(seederName);
         const seederItem: SeederInterface = new Seeder();
         await seederItem.seed();
         console.log(chalk.green.bold('Success!'));
-        console.timeEnd('seed_time');
+        console.timeEnd('time');
       } catch (error) {
         console.log(chalk.red.bold('Invalid Seed!', error));
       } finally {
