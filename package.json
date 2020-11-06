@@ -12,7 +12,8 @@
     "coverage": "nyc report --reporter=json",
     "lint": "eslint *.js test/*.js --fix",
     "test": "env PORT=8080 npx jest --forceExit --detectOpenHandles --maxWorkers=10",
-    "build": "export $(cat .env | xargs) && sh build.sh"
+    "build": "export $(cat .env | xargs) && sh build.sh",
+    "production": "yarn build && pm2-runtime build/server.js"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
@@ -22,7 +23,8 @@
     "koa-body": "^4.2.0",
     "koa-json": "^2.0.2",
     "mongoose": "^5.9.12",
-    "ow": "^0.19.0"
+    "ow": "^0.19.0",
+    "pm2": "^4.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
