@@ -1,5 +1,6 @@
 {
   "parser": "babel-eslint",
+
   "extends": [
     "plugin:flowtype/recommended",
     "airbnb"
@@ -7,6 +8,9 @@
   "plugins": [
     "flowtype"
   ],
+  "env": {
+    "jest": true
+  },
   "rules": {
     "class-methods-use-this": "off",
     "no-underscore-dangle": "off",

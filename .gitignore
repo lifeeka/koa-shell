@@ -1,7 +1,11 @@
 #Local ignores
+/.born
 .idea/
 .env
 
 #Libraries
 /node_modules
 yarn-error.log
+
+test/__snapshots__
+build
