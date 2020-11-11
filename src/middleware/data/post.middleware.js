@@ -6,7 +6,7 @@ export default () => (post: PostType) => {
     content: post.content,
     created_at: post.created_at,
     updated_at: post.updated_at,
-    user: post.user,
+    user: `@user:${post.user}`,
     uuid: post.uuid,
     comments: post.comments
       ?.map((comment: CommentType) => commentMiddleware()(comment)) ?? [],
