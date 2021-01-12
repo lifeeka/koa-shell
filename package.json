@@ -59,6 +59,7 @@
     "migrate-mongo": "^8.1.4",
     "mocha": "^8.1.2",
     "prettier": "^2.0.5",
+    "progress": "^2.0.3",
     "supertest": "^4.0.2",
     "typedi": "^0.8.0",
     "write": "^2.0.0"
