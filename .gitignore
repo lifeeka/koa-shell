@@ -3,6 +3,8 @@
 .idea/
 .env
 
+coverage
+
 #Libraries
 /node_modules
 yarn-error.log
