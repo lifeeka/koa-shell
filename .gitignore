@@ -1,5 +1,4 @@
 #Local ignores
-/.born
 .idea/
 .env
 
