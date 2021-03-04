@@ -1,0 +1,13 @@
+
+> user@0.0.0 start /app
+> nodemon --legacy-watch -r esm app.js
+
+[33m[nodemon] 2.0.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node -r esm app.js`[39m
+Koa listening on port 80
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node -r esm app.js`[39m
+Koa listening on port 80

@@ -1,0 +1,43 @@
+services:
+  mongodb:
+    build:
+      args:
+        MONGODB_VERSION: ${MONGODB_VERSION}
+        TZ: ${TZ}
+      context: mongodb
+    ports:
+      - ${DB_PORT}:27017
+    volumes:
+      - mongodata:/data/db:cached
+    networks:
+      - local
+  node:
+    container_name: koa-skeleton
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    networks:
+      - local
+    build:
+      args:
+        TZ: ${TZ}
+      context: node
+    tty: true
+    ports:
+    - 4234:4234
+    volumes:
+    - ../:/app:cached
+    healthcheck:
+      test: ["CMD", "curl", "-s", "http://0.0.0.0:4234"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: >
+      sh -c "yarn && yarn start"
+version: '3.7'
+volumes:
+  mongodata:
+networks:
+  local:
+    driver: bridge

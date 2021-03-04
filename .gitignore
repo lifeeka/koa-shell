@@ -1,7 +1,7 @@
 #Local ignores
-/.born
 .idea/
 .env
+.born/data
 
 coverage
 
