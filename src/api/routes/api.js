@@ -1,20 +1,17 @@
-import Router from '@koa/router';
-import response from 'response/default.response';
 import formatter from 'middleware/router/formatter.middleware';
 
-import post from './post.router';
-import comment from './comment.router';
+import router from 'koa-joi-router';
+import sample from './sample.router';
 
-let router = new Router();
+const { Joi } = router;
+const mainRouter = router();
 
-router.use(formatter(true));
-
-router = comment(router);
-const exportRouter = post(router);
-
-exportRouter.all('*', (ctx: any) => {
-  ctx.body = response.response({ url: ctx.request.url }, 'Page not found');
-  ctx.status = 404;
+mainRouter.route({
+  method: ['POST', 'PUT', 'GET', 'DELETE'],
+  path: '*',
+  handler: [formatter()],
 });
 
-export default exportRouter;
+mainRouter.route(sample(Joi));
+
+export default mainRouter;
